@@ -1,4 +1,12 @@
 def oxford_comma(array)
-  array.last.unshift("and ")
-  array.join(", ")
+  if array.count == 1
+    array
+  elsif array.count == 2
+    array.join(" and ")
+  elsif array.count > 2
+    array[-1].unshift("and ")
+    array.join(", ")
+  else
+    false
+  end
 end
